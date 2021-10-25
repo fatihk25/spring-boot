@@ -1,0 +1,61 @@
+server:
+  port: '8082'
+
+spring:
+  profiles:
+    active: dev
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/spring
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+test:
+  message: '"This is test message"'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env, beans"cd
+
+---
+
+spring:
+  profiles: dev1
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/spring-dev1
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+test:
+  message: '"This is test message"'
+
+---
+
+spring:
+  profiles: dev2
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/spring-dev2
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+test:
+  message: '"This is test message"'
